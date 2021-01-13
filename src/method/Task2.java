@@ -20,7 +20,8 @@ class OperationsOnNumbers{
     }
 
     int sub(int a, int b, int c, int d, int e){
-        return a-b-c-d-e;
+        return a-b-c-d-
+                e;
     }
 
 }
