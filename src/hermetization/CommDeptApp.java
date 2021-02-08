@@ -5,8 +5,11 @@ import java.util.Scanner;
 public class CommDeptApp {
     public static void main(String[] args) {
         Scanner scanner= new Scanner(System.in);
+        CommunicationDepartment commDept = new CommunicationDepartment();
+
 
         int choose;
+        int applicationNumber =1;
 
         do{
 
@@ -27,17 +30,66 @@ public class CommDeptApp {
 
             switch (choose){
                 case 1:
-                    System.out.println("*****");
 
-                    System.out.println("Wniosek złożony");
-                    break;
-                case 2:
                     System.out.println("*****");
-                    System.out.println("Zmienił się status wniosku");
+                    System.out.println("Wniosek składa: ");
+                    System.out.print("Imię: ");
+                    String name = scanner.next();
+                    System.out.print("Nazwisko: ");
+                    String sureName = scanner.next();
+                    System.out.println("Wniosek o wydanie tablicy: ");
+                    System.out.println("A - samochodowa");
+                    System.out.println("B - motocyklowa");
+                    System.out.println("C - zabytkowa");
+                    String typeOfLicensePlate = scanner.next();
+                    String licensePlate = "";
+
+                    switch (typeOfLicensePlate){
+                        case "a":
+                            licensePlate = "samochodowa";
+                            break;
+                        case "b":
+                            licensePlate = "motocyklowa";
+                            break;
+                        case "c":
+                            licensePlate = "zabytkowa";
+                    }
+                    Application application = new Application(name,sureName,licensePlate,applicationNumber);
+                    commDept.addAplication(application);
+                    application.displayApplicationDetails();
+                    applicationNumber++;
+                    break;
+                case 2: // zmiana statusu
+                    System.out.println("*****");
+                    System.out.print("Podaj numer wniosku: ");
+                    int number = scanner.nextInt();
+                    commDept.findApplication(number);
+
+                    System.out.println("Możesz zmienić status wniosku");
+                    System.out.println("A - w realizacji");
+                    System.out.println("B - do odbioru");
+                    String chooseStatusOption;
+                    chooseStatusOption = scanner.next();
+                    switch (chooseStatusOption){
+                        case "a":
+                            commDept.changeStatus(number,"w realizacji");
+                            commDept.displayApplicationStatus(number);
+                            break;
+                        case "b":
+                            commDept.changeStatus(number,"do odbioru");
+                            commDept.displayApplicationStatus(number);
+                            break;
+                    }
+
                     break;
                 case 3:
                     System.out.println("*****");
                     System.out.println("wyświetla status wniosku");
+                    System.out.println("*****");
+                    System.out.print("Podaj numer wniosku: ");
+                    number = scanner.nextInt();
+                    commDept.findApplication(number);
+                    commDept.displayApplicationStatus(number);
                     break;
                 case 100:
                     System.out.println("Dziękujemy za korzystanie z programu");
