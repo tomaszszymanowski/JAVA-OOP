@@ -8,7 +8,6 @@ public class Bear extends Toy {
         this.material = material;
     }
 
-
     public void display() {
         super.display();
         System.out.println("Material: " + material);

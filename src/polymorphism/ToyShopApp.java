@@ -37,7 +37,7 @@ public class ToyShopApp {
                     maerial = scanner.nextLine();
 
                     Bear bear = new Bear(name,price, maerial);
-                    toyShop.addBear(bear);
+                    toyShop.add(bear);
                     break;
                 case 2:
                     System.out.print("Name: ");
@@ -51,7 +51,7 @@ public class ToyShopApp {
                     type = scanner.nextLine();
 
                     Car car = new Car(name,price,type);
-                    toyShop.addCar(car);
+                    toyShop.add(car);
 
                     break;
                 case 3:
@@ -67,7 +67,7 @@ public class ToyShopApp {
                     int elements  = scanner.nextInt();
 
                     Puzzle puzzle = new Puzzle(name,price,elements);
-                    toyShop.addPuzzle(puzzle);
+                    toyShop.add(puzzle);
                     break;
                 case 4:
                     //add book
@@ -85,7 +85,7 @@ public class ToyShopApp {
                     int forAge  = scanner.nextInt();
 
                     Book book = new Book(name, price, pagesNumer, forAge);
-                    toyShop.addBook(book);
+                    toyShop.add(book);
 
                 case 5:
                     toyShop.displayAll();
