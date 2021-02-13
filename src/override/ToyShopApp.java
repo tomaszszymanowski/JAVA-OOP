@@ -17,7 +17,9 @@ public class ToyShopApp {
             System.out.println("---------- Toy Shop ----------");
             System.out.println("1 - add bear");
             System.out.println("2 - add car");
-            System.out.println("3 - display all");
+            System.out.println("3 - add puzzle");
+            System.out.println("4 - add book");
+            System.out.println("5 - display all");
             System.out.println("100  - stop program\n");
             option = scanner.nextInt();
             scanner.nextLine();
@@ -53,6 +55,39 @@ public class ToyShopApp {
 
                     break;
                 case 3:
+                    //add puzzle
+                    System.out.print("Name: ");
+                    name = scanner.nextLine();
+
+                    System.out.print("Price: ");
+                    price = scanner.nextDouble();
+                    scanner.nextLine();
+
+                    System.out.print("Elements: ");
+                    int elements  = scanner.nextInt();
+
+                    Puzzle puzzle = new Puzzle(name,price,elements);
+                    toyShop.addPuzzle(puzzle);
+                    break;
+                case 4:
+                    //add book
+                    System.out.print("Name: ");
+                    name = scanner.nextLine();
+
+                    System.out.print("Price: ");
+                    price = scanner.nextDouble();
+                    scanner.nextLine();
+
+                    System.out.print("Numbers of pages: ");
+                    int pagesNumer  = scanner.nextInt();
+
+                    System.out.print("Sugested Age: ");
+                    int forAge  = scanner.nextInt();
+
+                    Book book = new Book(name, price, pagesNumer, forAge);
+                    toyShop.addBook(book);
+
+                case 5:
                     toyShop.displayAll();
                     break;
             }
