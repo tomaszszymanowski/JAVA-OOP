@@ -7,6 +7,14 @@ public class GardenShopStorage {
     private Fertilizer[] fertilizers = new Fertilizer[10];
     private int fertilizerIndex = 0;
 
+    private Workwear[] workwears = new Workwear[10];
+    private int workwearIndex = 0;
+
+    public void addWorkwear(Workwear workwear){
+        if(workwearIndex < workwears.length){
+            workwears[workwearIndex++] = workwear;
+        }
+    }
 
     public void addFlower(Flower flower) {
         if(flowerIndex < flowers.length) {
@@ -33,6 +41,12 @@ public class GardenShopStorage {
             System.out.println("Nazwa: " + fertilizer.getName());
             System.out.println("Cena: " + fertilizer.getPrice());
             System.out.println("Przeznaczenie: " + fertilizer.getPurpose());
+        }
+        for (int k = 0; k < workwearIndex ; k++){
+            Workwear workwear = workwears[k];
+            System.out.println("Nazwa: " + workwear.getName());
+            System.out.println("Cena: " + workwear.getPrice());
+            System.out.println("Rozmiar: " + workwear.getWorkwearSize());
         }
     }
 
