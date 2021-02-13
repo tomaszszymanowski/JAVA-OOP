@@ -11,6 +11,7 @@ public class ToyShopApp {
         String name;
         double price;
         String maerial;
+        String type;
 
         do {
             System.out.println("---------- Toy Shop ----------");
@@ -37,6 +38,19 @@ public class ToyShopApp {
                     toyShop.addBear(bear);
                     break;
                 case 2:
+                    System.out.print("Name: ");
+                    name = scanner.nextLine();
+
+                    System.out.print("Price: ");
+                    price = scanner.nextDouble();
+                    scanner.nextLine();
+
+                    System.out.print("Type: ");
+                    type = scanner.nextLine();
+
+                    Car car = new Car(name,price,type);
+                    toyShop.addCar(car);
+
                     break;
                 case 3:
                     toyShop.displayAll();
