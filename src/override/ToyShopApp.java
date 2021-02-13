@@ -6,7 +6,11 @@ public class ToyShopApp {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
+        ToyShop toyShop = new ToyShop();
         int option;
+        String name;
+        double price;
+        String maerial;
 
         do {
             System.out.println("---------- Toy Shop ----------");
@@ -19,10 +23,23 @@ public class ToyShopApp {
 
             switch (option){
                 case 1:
+                    System.out.print("Name: ");
+                    name = scanner.nextLine();
+
+                    System.out.print("Price: ");
+                    price = scanner.nextDouble();
+                    scanner.nextLine();
+
+                    System.out.print("Material: ");
+                    maerial = scanner.nextLine();
+
+                    Bear bear = new Bear(name,price, maerial);
+                    toyShop.addBear(bear);
                     break;
                 case 2:
                     break;
                 case 3:
+                    toyShop.displayAll();
                     break;
             }
 
