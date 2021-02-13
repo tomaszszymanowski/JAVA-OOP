@@ -8,25 +8,32 @@ public class GardenShopStorage {
     private int fertilizerIndex = 0;
 
 
-
-
-    public void addFlower(Flower flower){
-        flowers[flowerIndex++] = flower;
-
-    }
-
-    public void displayAll() {
-        for(int i = 0; i< flowerIndex; i++){
-            flowers[i].display();
+    public void addFlower(Flower flower) {
+        if(flowerIndex < flowers.length) {
+            flowers[flowerIndex++] = flower;
         }
-        for (int j = 0; j< fertilizerIndex; j++){
-            fertilizers[j].display();
-        }
-
     }
 
     public void addFertilizer(Fertilizer fertilizer) {
-        fertilizers[fertilizerIndex++] = fertilizer;
+        if(fertilizerIndex < fertilizers.length){
+            fertilizers[fertilizerIndex++] = fertilizer;
+        }
+    }
+
+    public void displayAll() {
+        for (int i = 0; i < flowerIndex; i++) {
+            Flower flower = flowers[i];
+            System.out.println("Nazwa: " + flower.getName());
+            System.out.println("Cena: " + flower.getPrice());
+            System.out.println("Typ: " + flower.getType());
+
+        }
+        for (int j = 0; j < fertilizerIndex; j++) {
+            Fertilizer fertilizer = fertilizers[j];
+            System.out.println("Nazwa: " + fertilizer.getName());
+            System.out.println("Cena: " + fertilizer.getPrice());
+            System.out.println("Przeznaczenie: " + fertilizer.getPurpose());
+        }
     }
 
 }

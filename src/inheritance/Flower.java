@@ -1,20 +1,14 @@
 package inheritance;
 
-public class Flower {
-    private String name;
-    private double price;
+public class Flower extends Product{
     private String type;
 
     public Flower(String name, double price, String type) {
-        this.name = name;
-        this.price = price;
+        super(name,price);
         this.type = type;
     }
 
-
-    public void display() {
-        System.out.println("Nazwa: " + name);
-        System.out.println("Cena: " + price);
-        System.out.println("Typ: " + type);
+    public String getType() {
+        return type;
     }
 }

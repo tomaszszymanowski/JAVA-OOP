@@ -1,19 +1,19 @@
 package inheritance;
 
-public class Fertilizer {
-    private String name;
-    private double price;
+public class Fertilizer extends Product{
+
     private String purpose;
 
     public Fertilizer(String name, double price, String purpose) {
-        this.name = name;
-        this.price = price;
+       super(name,price);
         this.purpose = purpose;
     }
 
+    public String getPurpose() {
+        return purpose;
+    }
+
     public void display() {
-        System.out.println("Nazwa: " + name);
-        System.out.println("Cena: " + price);
-        System.out.println("Typ: " + purpose);
+
     }
 }
