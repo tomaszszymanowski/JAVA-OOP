@@ -12,6 +12,7 @@ public class MarketplaceApp {
         String expirationDate;
         String productOrigin;
 
+        Marketplace marketplace = new Marketplace();
 
 
 
@@ -24,6 +25,7 @@ public class MarketplaceApp {
             System.out.println("2 - books");
             System.out.println("3 - shoes");
             System.out.println("4 - milk");
+            System.out.println("5 - display all");
             System.out.println("19 - end program");
 
             option = scanner.nextInt();
@@ -56,6 +58,8 @@ public class MarketplaceApp {
                     System.out.print("the origin of the product: ");
                     productOrigin = scanner.nextLine();
 
+                    Fruit fruit = new Fruit(name,price,quantity,expirationDate,productOrigin);
+                    marketplace.add(fruit);
 
                     break;
                 case 2:
@@ -141,6 +145,9 @@ public class MarketplaceApp {
                         scanner.next();
                     }
                     double fatContnent = scanner.nextDouble();
+                    break;
+                case 5:
+                    marketplace.displayAll();
 
             }
 
