@@ -12,6 +12,8 @@ public class BeverageFactoryApp {
         String productType;
         double alkoholContent;
 
+        BeverageFactory beverageFactory = new BeverageFactory();
+
         do{
             System.out.println("\nProgram do zarządzania fabryką napojów");
             System.out.println("1 - dodaj produkt piwo");
@@ -34,7 +36,8 @@ public class BeverageFactoryApp {
                     System.out.print("procentowa zawartość alkoholu: ");
                     alkoholContent = scanner.nextDouble();
 
-
+                    Beer beer = new Beer(name,capacity,composition,alkoholContent);
+                    beverageFactory.add(beer);
                     break;
                 case 2:
                     System.out.print("Nazwa produktu: ");
@@ -47,8 +50,12 @@ public class BeverageFactoryApp {
                     System.out.print("rodzaj produktu: ");
                     productType = scanner.nextLine();
 
+                    Water water = new Water(name,capacity,composition,productType);
+                    beverageFactory.add(water);
+
                     break;
                 case 3:
+                    beverageFactory.displayAll();
                     break;
 
             }

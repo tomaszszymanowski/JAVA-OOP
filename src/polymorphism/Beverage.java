@@ -10,4 +10,10 @@ public class Beverage {
         this.capacityInMilliter = capacityInMilliter;
         this.composition = composition;
     }
+
+    public void display(){
+        System.out.println("Nazwa: " + name);
+        System.out.println("Pojemność: " + capacityInMilliter);
+        System.out.println("Skład: " + composition);
+    }
 }
