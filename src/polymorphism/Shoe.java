@@ -7,4 +7,9 @@ public class Shoe extends Product{
         super(name, price, quantity);
         this.producer = producer;
     }
+
+    public void display(){
+        super.display();
+        producer.display();
+    }
 }

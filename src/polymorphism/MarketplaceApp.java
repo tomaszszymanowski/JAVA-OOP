@@ -12,6 +12,13 @@ public class MarketplaceApp {
         int quantity;
         String expirationDate;
         String productOrigin;
+        String streetName;
+        int streetNumber;
+        int flatNumber;
+        String zipCode;
+        String town;
+
+
 
         Marketplace marketplace = new Marketplace();
 
@@ -31,6 +38,7 @@ public class MarketplaceApp {
 
             option = scanner.nextInt();
 
+
             switch (option){
                 case 1:
                     System.out.println("Add fruit");
@@ -38,7 +46,7 @@ public class MarketplaceApp {
                     scanner.nextLine();
                     name = scanner.nextLine();
 
-                    scanner.nextLine();
+
                     System.out.print("Price: ");
                     price = sc.missDouble();
 
@@ -48,7 +56,6 @@ public class MarketplaceApp {
                     System.out.print("Expiration Date: ");
                     expirationDate = scanner.nextLine();
 
-                    scanner.nextLine();
                     System.out.print("the origin of the product: ");
                     productOrigin = scanner.nextLine();
 
@@ -69,25 +76,23 @@ public class MarketplaceApp {
                     quantity = sc.missInt();
 
                     System.out.print("Author: ");
-                    scanner.nextLine();
                     String authorName = scanner.nextLine();
 
                     System.out.println("Author adress");
                     System.out.print("Street: ");
-                    String streetName = scanner.nextLine();
+                    streetName = scanner.nextLine();
 
                     System.out.print("Street number: ");
-                    int streetNumber = sc.missInt();
+                    streetNumber = sc.missInt();
 
                     System.out.print("Flat number: ");
-                    int flatNumber = sc.missInt();
+                    flatNumber = sc.missInt();
 
-                    scanner.nextLine();
                     System.out.print("Post code: ");
-                    String zipCode = scanner.nextLine();
+                    zipCode = scanner.nextLine();
 
                     System.out.print("Town: ");
-                    String town = scanner.nextLine();
+                    town = scanner.nextLine();
 
                     Address address = new Address(streetName,streetNumber,flatNumber,zipCode,town);
                     Author author = new Author(authorName,address);
@@ -110,8 +115,31 @@ public class MarketplaceApp {
                     quantity = sc.missInt();
 
                     System.out.print("Producer: ");
-                    scanner.nextLine();
                     String producer = scanner.nextLine();
+
+                    System.out.print("Producer NIP: ");
+                    String NIP = scanner.nextLine();
+
+                    System.out.println("Producer adress");
+                    System.out.print("Street: ");
+                    streetName = scanner.nextLine();
+
+                    System.out.print("Street number: ");
+                    streetNumber = sc.missInt();
+
+                    System.out.print("Flat number: ");
+                    flatNumber = sc.missInt();
+
+                    System.out.print("Post code: ");
+                    zipCode = scanner.nextLine();
+
+                    System.out.print("Town: ");
+                    town = scanner.nextLine();
+
+                    Address address1 = new Address(streetName,streetNumber,flatNumber,zipCode,town);
+                    Producer producer1 = new Producer(producer,NIP,address1);
+                    Shoe shoe = new Shoe(name,price,quantity,producer1);
+                    marketplace.add(shoe);
 
                     break;
                 case 4:
@@ -127,11 +155,14 @@ public class MarketplaceApp {
                     quantity = sc.missInt();
 
                     System.out.print("Expiration Date: ");
-                    scanner.nextLine();
                     expirationDate = scanner.nextLine();
 
                     System.out.print("Fat content: ");
                     double fatContnent = sc.missDouble();
+
+                    Milk milk = new Milk(name,price,quantity,expirationDate,fatContnent);
+                    marketplace.add(milk);
+
                     break;
                 case 5:
                     marketplace.displayAll();
