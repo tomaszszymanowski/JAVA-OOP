@@ -15,13 +15,14 @@ public class MarketplaceApp {
 
 
 
+
         do{
             System.out.println("");
             System.out.println("******* Welcome to MARKET shop *********");
             System.out.println("Select a product category :");
             System.out.println("1 - fruits");
             System.out.println("2 - books");
-            System.out.println("3 - boots");
+            System.out.println("3 - shoes");
             System.out.println("4 - milk");
             System.out.println("19 - end program");
 
@@ -79,12 +80,14 @@ public class MarketplaceApp {
 
                     System.out.print("Author: ");
                     scanner.nextLine();
-                    String author = scanner.nextLine();
+                    String authorName = scanner.nextLine();
+
+                    Author author = new Author(authorName);
 
 
                     break;
                 case 3:
-                    System.out.println("Adding a boots");
+                    System.out.println("Adding a shoes");
                     System.out.print("Name: ");
                     scanner.nextLine();
                     name = scanner.nextLine();
@@ -132,12 +135,12 @@ public class MarketplaceApp {
                     scanner.nextLine();
                     expirationDate = scanner.nextLine();
 
-                    System.out.println("Fat content: ");
-                    while (!scanner.hasNextInt()) {
+                    System.out.print("Fat content: ");
+                    while (!scanner.hasNextDouble()) {
                         System.out.println("Musisz podać liczbę!");
                         scanner.next();
                     }
-                    String fatContnent = scanner.nextLine();
+                    double fatContnent = scanner.nextDouble();
 
             }
 
