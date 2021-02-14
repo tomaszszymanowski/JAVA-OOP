@@ -7,4 +7,11 @@ public class PopularBook extends Product{
         super(name, price, quantity);
         this.authorName = authorName;
     }
+
+    public void display(){
+        super.display();
+        authorName.display();
+
+
+    }
 }

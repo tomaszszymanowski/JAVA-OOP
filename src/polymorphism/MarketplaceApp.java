@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class MarketplaceApp {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        ScannerUtils sc = new ScannerUtils();
         int option;
         String name;
         double price;
@@ -37,19 +38,12 @@ public class MarketplaceApp {
                     scanner.nextLine();
                     name = scanner.nextLine();
 
+                    scanner.nextLine();
                     System.out.print("Price: ");
-                    while (!scanner.hasNextDouble()) {
-                        System.out.println("Musisz podać liczbę!");
-                        scanner.next();
-                    }
-                    price = scanner.nextDouble();
+                    price = sc.missDouble();
 
                     System.out.print("Quantity: ");
-                    while (!scanner.hasNextInt()) {
-                        System.out.println("Musisz podać liczbę!");
-                        scanner.next();
-                    }
-                    quantity = scanner.nextInt();
+                    quantity = sc.missInt();
 
                     System.out.print("Expiration Date: ");
                     expirationDate = scanner.nextLine();
@@ -69,24 +63,37 @@ public class MarketplaceApp {
                     name = scanner.nextLine();
 
                     System.out.print("Price: ");
-                    while (!scanner.hasNextDouble()) {
-                        System.out.println("Musisz podać liczbę!");
-                        scanner.next();
-                    }
-                    price = scanner.nextDouble();
+                    price = sc.missDouble();
 
                     System.out.print("Quantity: ");
-                    while (!scanner.hasNextInt()) {
-                        System.out.println("Musisz podać liczbę!");
-                        scanner.next();
-                    }
-                    quantity = scanner.nextInt();
+                    quantity = sc.missInt();
 
                     System.out.print("Author: ");
                     scanner.nextLine();
                     String authorName = scanner.nextLine();
 
-                    Author author = new Author(authorName);
+                    System.out.println("Author adress");
+                    System.out.print("Street: ");
+                    String streetName = scanner.nextLine();
+
+                    System.out.print("Street number: ");
+                    int streetNumber = sc.missInt();
+
+                    System.out.print("Flat number: ");
+                    int flatNumber = sc.missInt();
+
+                    scanner.nextLine();
+                    System.out.print("Post code: ");
+                    String zipCode = scanner.nextLine();
+
+                    System.out.print("Town: ");
+                    String town = scanner.nextLine();
+
+                    Address address = new Address(streetName,streetNumber,flatNumber,zipCode,town);
+                    Author author = new Author(authorName,address);
+                    PopularBook book = new PopularBook(name,price,quantity,author);
+
+                    marketplace.add(book);
 
 
                     break;
@@ -97,20 +104,12 @@ public class MarketplaceApp {
                     name = scanner.nextLine();
 
                     System.out.print("Price: ");
-                    price = scanner.nextDouble();
+                    price = sc.missDouble();
 
                     System.out.print("Quantity: ");
-                    while (!scanner.hasNextInt()) {
-                        System.out.println("Musisz podać liczbę!");
-                        scanner.next();
-                    }
-                    quantity = scanner.nextInt();
+                    quantity = sc.missInt();
 
                     System.out.print("Producer: ");
-                    while (!scanner.hasNextInt()) {
-                        System.out.println("Musisz podać liczbę!");
-                        scanner.next();
-                    }
                     scanner.nextLine();
                     String producer = scanner.nextLine();
 
@@ -122,29 +121,17 @@ public class MarketplaceApp {
                     name = scanner.nextLine();
 
                     System.out.print("Price: ");
-                    while (!scanner.hasNextDouble()) {
-                        System.out.println("Musisz podać liczbę!");
-                        scanner.next();
-                    }
-                    price = scanner.nextDouble();
+                    price = sc.missDouble();
 
                     System.out.print("Quantity: ");
-                    while (!scanner.hasNextInt()) {
-                        System.out.println("Musisz podać liczbę!");
-                        scanner.next();
-                    }
-                    quantity = scanner.nextInt();
+                    quantity = sc.missInt();
 
                     System.out.print("Expiration Date: ");
                     scanner.nextLine();
                     expirationDate = scanner.nextLine();
 
                     System.out.print("Fat content: ");
-                    while (!scanner.hasNextDouble()) {
-                        System.out.println("Musisz podać liczbę!");
-                        scanner.next();
-                    }
-                    double fatContnent = scanner.nextDouble();
+                    double fatContnent = sc.missDouble();
                     break;
                 case 5:
                     marketplace.displayAll();
