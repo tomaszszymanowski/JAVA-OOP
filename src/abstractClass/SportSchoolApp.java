@@ -13,11 +13,14 @@ public class SportSchoolApp {
         int birthYear;
         String dietDescription;
         int careerStart;
+        String clubName;
+        String fundations;
 
 
         do {
             System.out.println("*** Sport School App ***");
             System.out.println("1 - add sportsman");
+            System.out.println("4 - go to traning");
             System.out.println("5 - display all sportsman");
             System.out.println("100 - end program");
             option = scanner.nextInt();
@@ -39,9 +42,17 @@ public class SportSchoolApp {
                     scanner.nextLine();
                     System.out.print("Enter position: ");
                     String positionOnField = scanner.nextLine();
+                    System.out.print("the name of the club to which the player belongs:  ");
+                    clubName = scanner.nextLine();
+                    System.out.print("year the club was founded: ");
+                    fundations = scanner.nextLine();
 
-                    Footballer footballer = new Footballer(name, surname, birthYear, dietDescription, careerStart, positionOnField);
+                    SportClub sportClub = new SportClub(clubName,fundations);
+                    Footballer footballer = new Footballer(name, surname, birthYear, dietDescription, careerStart, positionOnField,sportClub);
                     sportSchool.add(footballer);
+                    break;
+                case 4:
+                    sportSchool.train();
                     break;
                 case 5:
                     //sportSchool.display();

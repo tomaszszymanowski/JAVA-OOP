@@ -10,14 +10,10 @@ public class Person {
         this.name = name;
         this.surname = surname;
         this.birthYear = birthYear;
-        this.age = 2021 - birthYear;
+        this.age = (2021 - birthYear);
     }
 
-    public void display() {
-        System.out.println(name);
-        System.out.println(surname);
-        System.out.println(age);
-    }
+
 
     @Override
     public String toString() {
@@ -27,5 +23,9 @@ public class Person {
                 ", birthYear=" + birthYear +
                 ", age=" + age +
                 '}';
+    }
+
+    public void train() {
+
     }
 }

@@ -1,6 +1,6 @@
 package abstractClass;
 
-public class Sportsman extends Person{
+public abstract class Sportsman extends Person{
     private String dietDescription;
     private int careerStartAt;
     //private Club club
@@ -9,6 +9,10 @@ public class Sportsman extends Person{
         super(name, surname, birthYear);
         this.dietDescription = dietDescription;
         this.careerStartAt = careerStartAt;
+    }
+
+    public void train(){
+
     }
 
     @Override
