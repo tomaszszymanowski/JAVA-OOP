@@ -19,7 +19,8 @@ public class SportSchoolApp {
 
         do {
             System.out.println("*** Sport School App ***");
-            System.out.println("1 - add sportsman");
+            System.out.println("1 - add footbaler");
+            System.out.println("2 - add runner");
             System.out.println("4 - go to traning");
             System.out.println("5 - display all sportsman");
             System.out.println("100 - end program");
@@ -50,6 +51,29 @@ public class SportSchoolApp {
                     SportClub sportClub = new SportClub(clubName,fundations);
                     Footballer footballer = new Footballer(name, surname, birthYear, dietDescription, careerStart, positionOnField,sportClub);
                     sportSchool.add(footballer);
+                    break;
+                case 2:
+                    scanner.nextLine();
+                    System.out.print("Enter the name: ");
+                    name = scanner.nextLine();
+                    System.out.print("Enter the surname: ");
+                    surname = scanner.nextLine();
+                    System.out.print("Enter year of birth: ");
+                    birthYear = scanner.nextInt();
+                    System.out.print("Diet description: ");
+                    scanner.nextLine();
+                    dietDescription = scanner.nextLine();
+                    System.out.print("Enter start career: ");
+                    careerStart = scanner.nextInt();
+                    scanner.nextLine();
+                    System.out.print("Prefered distance: ");
+                    String preferedDistance = scanner.nextLine();
+                    System.out.print("Life's record: ");
+                    String lifesRecord = scanner.nextLine();
+
+                    Runner runner = new Runner(name,surname,birthYear,dietDescription,careerStart,preferedDistance,lifesRecord);
+                    sportSchool.add(runner);
+
                     break;
                 case 4:
                     sportSchool.train();
