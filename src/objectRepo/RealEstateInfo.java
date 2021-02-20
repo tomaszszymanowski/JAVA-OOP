@@ -24,7 +24,6 @@ public class RealEstateInfo {
         return false;
     }
 
-
     public void display() {
         for (int i = 0; i < index; i++) {
             System.out.println(realEstates[i]);
