@@ -1,5 +1,7 @@
 package objectRepo;
 
+import java.util.Objects;
+
 public class Address {
     private String street;
     private int houseNumber;
@@ -24,5 +26,18 @@ public class Address {
                 ", city='" + city + '\'' +
                 ", postCode='" + postCode + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Address address = (Address) o;
+        return houseNumber == address.houseNumber && flatNumber == address.flatNumber && Objects.equals(street, address.street) && Objects.equals(city, address.city) && Objects.equals(postCode, address.postCode);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(street, houseNumber, flatNumber, city, postCode);
     }
 }
