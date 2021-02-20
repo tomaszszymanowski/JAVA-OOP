@@ -6,6 +6,7 @@ public class RealEstateApp {
     public static void main(String[] args) {
 
         Scanner scanner =new Scanner(System.in);
+        RealEstateInfo realEstateInfo = new RealEstateInfo();
         int option;
 
 
@@ -43,13 +44,14 @@ public class RealEstateApp {
                     Address address = new Address(street, houseNumber,flatNumber,city,postCode);
                     RealEstate realEstate = new RealEstate(number,border,address,landRegisterNumber,description);
 
+                    realEstateInfo.add(realEstate);
 
 
 
 
                     break;
                 case 2:
-
+                    realEstateInfo.display();
                     break;
 
             }

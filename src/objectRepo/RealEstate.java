@@ -14,4 +14,15 @@ public class RealEstate {
         this.landRegisterNumber = landRegisterNumber;
         this.description = description;
     }
+
+    @Override
+    public String toString() {
+        return "RealEstate{" +
+                "number=" + number +
+                ", border='" + border + '\'' +
+                ", address=" + address +
+                ", \nlandRegisterNumber='" + landRegisterNumber + '\'' +
+                ", description='" + description + '\'' +
+                '}';
+    }
 }
