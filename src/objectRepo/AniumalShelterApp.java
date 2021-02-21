@@ -7,14 +7,13 @@ public class AniumalShelterApp {
         Scanner scanner = new Scanner(System.in);
         AnimalShelterInfo animalShelterInfo = new AnimalShelterInfo();
         int option;
+        int chipNumber = 0;
         Animal animal1 = new Animal("dog","doberman",true,1234,"Brutus",1);
         animalShelterInfo.add(animal1);
 
         System.out.println("****** Animal Shelter App ******");
         do{
             System.out.println("1 - add animal");
-            System.out.println("2 - display dogs");
-            System.out.println("3 - display cats");
             System.out.println("4 - display all");
             System.out.println("100 - end program");
             option = scanner.nextInt();
@@ -28,9 +27,11 @@ public class AniumalShelterApp {
                     String race = scanner.nextLine();
                     System.out.print("Has chip?: ");
                     boolean hasChip = scanner.nextBoolean();
-                    System.out.print("Chip number: ");
-                    int chipNumber = scanner.nextInt();
-                    scanner.nextLine();
+                    if(hasChip){
+                        System.out.print("Chip number: ");
+                        chipNumber = scanner.nextInt();
+                        scanner.nextLine();
+                    }
                     System.out.print("Name: ");
                     String name = scanner.nextLine();
                     System.out.print("registraton number: ");

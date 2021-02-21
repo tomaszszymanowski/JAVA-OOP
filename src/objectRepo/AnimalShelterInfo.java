@@ -8,7 +8,10 @@ public class AnimalShelterInfo {
         if (index < animals.length && !exist(animal)) {
             animals[index++] = animal;
 
+        }else{
+            System.out.println("nie dodano");
         }
+
     }
 
     private boolean exist(Animal animal) {
@@ -20,14 +23,7 @@ public class AnimalShelterInfo {
         return false;
     }
 
-//    private boolean sameChip(Animal animal){
-//        for (int i = 0; i < index; i++) {
-//            if (animals[i].equals(animal)) {
-//                return true;
-//            }
-//        }
-//        return false;
-//    }
+
 
     public void display(){
         for (int i = 0; i < index; i++){
@@ -36,4 +32,6 @@ public class AnimalShelterInfo {
         }
 
     }
+
+
 }
